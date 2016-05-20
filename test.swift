@@ -1,9 +1,7 @@
+// VerbConjugator
 //
-//  ViewController.swift
-//  VerbConjugator
-//
-//  Created by Bhanu Prakash  on 18/05/16.
-//  Copyright © 2016 Bhanu. All rights reserved.
+//  Created by Hari Krishna  on 18/05/16.
+//  Copyright © 2016 Hari. All rights reserved.
 //
 
 
@@ -98,14 +96,9 @@ enum TextEnumT : Int {
     case TextVerbStem
 }
 
-
-//struct for input
 struct VerbInput {
     var rootOfVerb: String
-    var group:      GroupEnumT
-    // var rootOfVerb="hare"
-    // var group=GroupEnumT.GroupTwoEndingTsu
-    
+    var group:      GroupEnumT    
     init(_ root: String,_ tempgroup: GroupEnumT){
         self.rootOfVerb=root
         self.group=tempgroup
@@ -125,36 +118,9 @@ struct  TenseInput {
         self.tense=tempTense
         self.mood=tempMood
     }
-//   var politenessLevel=PolitenessLevelEnumT.PolitenessLevelPolite
-//     var sentenceSign=SentenceSignEnumT.SentenceSignNegative
-//     var tense=TenseEnumT.TensePast
-//     var mood=MoodEnumT.MoodIndicative
-   // var aspect:         AspectEnumT
-   // var number:         NumberEnumT
-   // var person:         PersonEnumT
-   // var voice:          VoiceEnumT
+
+
 }
-/*
-//13 x 8 array which stores our static texts
-let textTable: [[String]] = [
-    ["","","ru","re","you","te","ta","tabe"],
-    ["","","ru","re","you","te","ta","mi"],
-    ["wa","i","u","e","ou","tte","tta","ai"],
-    ["ta","chi","tsu","te","tou","tte","tta","harechi"],
-    ["ra","ri","ru","re","rou","tte","tta","wakari"],
-    ["ba","bi","bu","be","bou","nde","nda","narabi"],
-    ["ma","mi","mu","me","mou","nde","nda","sumi"],
-    ["na","ni","nu","ne","nou","nde","nda","shini"],
-    ["ka","ki","ku","ke","kou","ite","ita","saki"],
-    ["ga","gi","gu","ge","gou","ide","ida","oyogi"],
-    ["sa","shi","su","se","sou","shite","shita","hanashi"],
-    ["","","","","","","",""],
-    ["","","","","","","",""]]
-*/
-
-
-//print(endingpart)
-//print(columnIndex)
 
 
 
@@ -172,7 +138,7 @@ func conjugator(verbinput: VerbInput,tenseinput: TenseInput)->String{
     let tenseTable = (tenseinput.politenessLevel,  tenseinput.sentenceSign,  tenseinput.tense, tenseinput.mood )
     
 
-    //var firstPart=verbinput.rootOfVerb
+
     var endingpart: String
     var columnIndex:Int = 0
     
@@ -234,8 +200,7 @@ func conjugator(verbinput: VerbInput,tenseinput: TenseInput)->String{
 var sampleVerb=VerbInput("waka",GroupEnumT.GroupTwoEndingRu)
 var sampleTense=TenseInput(PolitenessLevelEnumT.PolitenessLevelPlain,SentenceSignEnumT.SentenceSignNegative,TenseEnumT.TensePast,MoodEnumT.MoodIndicative)
 }
-// var sampleVerb=VerbInput(root:"waka",tempgroup:GroupEnumT.GroupTwoEndingRu)
-// var sampleTense=TenseInput(tempPolitenessLevel:PolitenessLevelEnumT.PolitenessLevelPlain,tempSentenceSign:SentenceSignEnumT.SentenceSignNegative,tempTense:TenseEnumT.TensePast,tempMood:MoodEnumT.MoodIndicative)
+
 let viewController=ViewController()
 var sampleverb=viewController.sampleVerb
 var sampletense=viewController.sampleTense
